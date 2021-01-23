@@ -12,12 +12,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.options('/movie', cors());
-app.options('/movie', cors())
-app.options('/movie/:id', cors())
-app.options('/movie/:id', cors())
-app.options('/movie/:id', cors())
-app.options('/movies', cors())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
