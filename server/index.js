@@ -15,10 +15,6 @@ app.use(bodyParser.json());
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); 
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
