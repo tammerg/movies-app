@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:5000/api"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use('/api', movieRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
